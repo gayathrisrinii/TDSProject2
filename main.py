@@ -25,6 +25,10 @@ REQUEST_TIMEOUT = 12  # seconds for external requests
 class URLRequest(BaseModel):
     url: str
 
+@app.get("/")
+def home():
+    return {"status": "ok"}
+
 @app.get("/movies")
 def get_movies():
     url = "https://en.wikipedia.org/wiki/List_of_highest-grossing_films"
